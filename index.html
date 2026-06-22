@@ -144,6 +144,15 @@
   .nav-burger{display:none;background:none;border:0;padding:6px;margin-right:-6px;color:var(--ink);line-height:0}
   .nav-burger svg{width:26px;height:26px;display:block}
   .nav-burger .bg-close{display:none}
+  /* 笔记本中等屏顶栏收紧：缩小链接间距与按钮内边距，配合 askbar「问句子」药丸在 ≤1440 隐藏，
+     让「联系我们 / 登录 / 注册」与导航链接在 1240–1440 区间不再相互挤压、重叠 */
+  @media(max-width:1520px){
+    .nav-links{gap:clamp(7px,0.9vw,16px)}
+    .nav-item > a,.nav-item > button{font-size:14px}
+    .nav-right{gap:8px}
+    .nav-cta{padding:9px 14px;font-size:13.5px}
+    .nav-login{padding:8px 13px;font-size:13.5px}
+  }
   @media(max-width:1240px){
     .nav-links,.nav-right .nav-login{display:none}
     .nav-burger{display:inline-flex;align-items:center}
