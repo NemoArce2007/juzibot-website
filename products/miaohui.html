@@ -256,7 +256,7 @@
               <span class="live"><i></i>LIVE</span>
             </div>
             <div class="ph-stage" id="wbStage">
-              <iframe id="wbFrame" data-d="../assets/demos/miaohui-workbench.html" data-m="../assets/demos/miaohui-workbench-mobile.html" title="句子秒回 · 聚合聊天工作台 实时演示" loading="lazy"></iframe>
+              <iframe id="wbFrame" data-d="../assets/demos/miaohui-hero/index.html" data-m="../assets/demos/miaohui-hero/index.html" title="句子秒回 · 聚合聊天工作台 实时演示" loading="lazy"></iframe>
             </div>
             <button class="ph-zoom" type="button" onclick="wbOpen()" aria-label="放大查看工作台演示"><i class="fa-solid fa-up-right-and-down-left-from-center" aria-hidden="true"></i> 放大查看</button>
           </div>
@@ -489,7 +489,7 @@
     if(!fr||!stg)return;
     var big=document.getElementById('wbFrameBig'),bstg=document.getElementById('wbBigStage'),modal=document.getElementById('wbModal');
     var mq=matchMedia('(max-width:760px)');
-    function mode(){return mq.matches?{src:fr.getAttribute('data-m'),w:430,h:860}:{src:fr.getAttribute('data-d'),w:1440,h:780};}
+    function mode(){return {src:fr.getAttribute('data-d'),w:1440,h:900};}
     function place(frame,host,m,s){frame.style.width=m.w+'px';frame.style.height=m.h+'px';frame.style.transform=(s>=.999?'none':'scale('+s+')');host.style.height=Math.round(m.h*s)+'px';}
     function fitPrev(){var m=mode();if(fr.getAttribute('src')!==m.src)fr.setAttribute('src',m.src);var w=stg.clientWidth||520;place(fr,stg,m,w/m.w);}
     function fitBig(){var m=mode();var availW=Math.min(window.innerWidth*0.96,m.w),availH=window.innerHeight*0.9;var s=Math.min(availW/m.w,availH/m.h,1);
