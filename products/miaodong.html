@@ -146,54 +146,6 @@
   .shotcard img{width:100%;height:auto;display:block;object-fit:cover;object-position:top center}
   .shotcard .cap{padding:14px 18px;font-size:13px;color:var(--ink-2);line-height:1.6;border-top:1px solid var(--line)}
   @media(max-width:760px){.shotwrap{grid-template-columns:1fr}}
-  /* —— 知识库 / 工作流图解面板（沿用 site.css 变量，承接旧页两个动效面板） —— */
-  .demo-panel{border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;background:#fff;
-    box-shadow:0 1px 2px rgba(14,20,48,.05),0 30px 64px -34px rgba(67,56,202,.26)}
-  .demo-panel .dp-hd{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);
-    background:linear-gradient(180deg,#FCFDFF,#F6F9FE);font-family:var(--mono);font-size:12px;letter-spacing:.03em;color:var(--ink-2);font-weight:700}
-  .demo-panel .dp-hd i.dot{width:8px;height:8px;border-radius:50%;background:var(--blue)}
-  .demo-panel .dp-body{padding:clamp(13px,1.5vw,17px)}
-  /* 知识库行 */
-  .kb-rows{display:flex;flex-direction:column;gap:7px;font-size:13px}
-  .kb-row{display:flex;align-items:center;gap:10px;padding:8px 11px;border:1px solid var(--line);border-radius:11px;
-    background:#fff;transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s}
-  .kb-row:hover{transform:translateX(4px);border-color:var(--blue-200);box-shadow:var(--shadow-soft)}
-  .kb-row .kb-ic{width:27px;height:27px;border-radius:8px;display:grid;place-items:center;font-size:13px;color:#fff;flex-shrink:0}
-  .kb-row.k-blue .kb-ic{background:var(--blue)}
-  .kb-row.k-orange .kb-ic{background:var(--orange-deep)}
-  .kb-row.k-green .kb-ic{background:var(--green)}
-  .kb-row.k-purple .kb-ic{background:var(--purple)}
-  .kb-row.k-mute .kb-ic{background:var(--ink-3)}
-  .kb-row .kb-nm{flex:1;font-weight:650;color:var(--ink)}
-  .kb-row .kb-meta{font-family:var(--mono);font-size:11px;color:var(--ink-3);flex-shrink:0}
-  .kb-row .kb-sync{font-size:11px;font-weight:700;color:var(--green);background:var(--green-lt);padding:3px 9px;border-radius:999px;flex-shrink:0}
-  /* 工作流步骤 */
-  .wf-steps{display:flex;flex-direction:column;gap:8px}
-  .wf-step{display:flex;align-items:center;gap:11px;padding:11px 15px;border-radius:11px;font-size:13.5px;font-weight:700;letter-spacing:-.01em}
-  .wf-step i.wf-ic{width:22px;height:22px;border-radius:7px;display:grid;place-items:center;font-size:11px;color:#fff;flex-shrink:0}
-  .wf-step.w-orange{background:var(--orange-lt);color:var(--orange-deep)}.wf-step.w-orange i.wf-ic{background:var(--orange-deep)}
-  .wf-step.w-blue{background:var(--blue-50);color:var(--blue)}.wf-step.w-blue i.wf-ic{background:var(--blue)}
-  .wf-step.w-green{background:var(--green-lt);color:var(--green)}.wf-step.w-green i.wf-ic{background:var(--green)}
-  .wf-step.w-purple{background:#EEF0FF;color:var(--purple)}.wf-step.w-purple i.wf-ic{background:var(--purple)}
-  .wf-step.w-teal{background:var(--orange-lt);color:var(--teal)}.wf-step.w-teal i.wf-ic{background:var(--teal)}
-  .wf-arrow{display:flex;align-items:center;gap:7px;padding-left:12px;font-size:11.5px;color:var(--ink-3);font-family:var(--mono)}
-  .wf-branch{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-  /* —— 5 行业策略库卡片 —— */
-  .indgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(12px,1.4vw,16px)}
-  .indcard{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--radius);
-    padding:clamp(22px,2.4vw,28px) clamp(16px,1.8vw,20px);text-align:center;
-    transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .4s}
-  .indcard:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:transparent}
-  .indcard .ico{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;margin:0 auto 14px;
-    font-size:21px;background:var(--blue-50);color:var(--blue)}
-  .indcard:nth-child(2) .ico{background:var(--orange-lt);color:var(--orange-deep)}
-  .indcard:nth-child(3) .ico{background:var(--green-lt);color:var(--green)}
-  .indcard:nth-child(4) .ico{background:#EEF0FF;color:var(--purple)}
-  .indcard:nth-child(5) .ico{background:var(--orange-lt);color:var(--teal)}
-  .indcard .nm{font-size:14.5px;font-weight:820;letter-spacing:-.01em;color:var(--ink)}
-  .indcard .sc{font-size:11.5px;color:var(--ink-3);margin-top:7px;line-height:1.55}
-  @media(max-width:860px){.indgrid{grid-template-columns:repeat(3,1fr)}}
-  @media(max-width:480px){.indgrid{grid-template-columns:repeat(2,1fr)}}
   /* —— 结果数据带 —— */
   .kpiband{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,1.6vw,20px)}
   .kpicard{position:relative;overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:var(--radius);
@@ -211,10 +163,8 @@
   @media(max-width:760px){.kpiband{grid-template-columns:1fr 1fr}}
 
   /* ════════════ 移动端适配（hero 缩放/模态除外，那段不动）════════════ */
-  /* —— 中窄屏（≤900）：知识库两栏堆叠（本页用内联 grid 覆盖了 site.css 的塌缩，需 !important 收回） —— */
+  /* —— 中窄屏（≤900）—— */
   @media(max-width:900px){
-    /* #knowledge 的 .ind-why 内联了 grid-template-columns:1.12fr .88fr，这里强制堆叠 */
-    .ind-why{grid-template-columns:1fr!important;gap:clamp(20px,4vw,28px)!important;align-items:start!important}
     /* sec-top 默认是不换行的 flex 行，窄屏改纵向堆叠，避免 .sub 被挤 */
     .sec-top{flex-direction:column;align-items:flex-start;gap:14px}
     .sec-top .sub{flex-shrink:1;max-width:none}
@@ -223,25 +173,11 @@
   /* —— 窄屏（≤640）：多列塌 1 列、间距字号收、消除横向溢出 —— */
   @media(max-width:640px){
     /* 防溢出兜底：媒体/图片不超容器 */
-    .ph-demo,.shotcard,.demo-panel,.kpicard,.indcard{max-width:100%}
+    .ph-demo,.shotcard,.kpicard{max-width:100%}
     .shotcard img{max-width:100%}
 
     /* 截图陈列：单列（site.css 760 已单列，这里收紧间距并兜底） */
     .shotwrap{grid-template-columns:1fr;gap:16px}
-
-    /* 知识库行：name + meta/sync 可换行，窄屏不溢出；触控区抬高 */
-    .kb-row{flex-wrap:wrap;gap:8px 10px;padding:10px 12px;min-height:44px}
-    .kb-row .kb-nm{flex:1 1 auto;min-width:0;overflow-wrap:anywhere}
-    .kb-row .kb-meta,.kb-row .kb-sync{margin-left:auto}
-
-    /* 工作流分支两栏 → 单列堆叠 */
-    .wf-branch{grid-template-columns:1fr;gap:8px}
-    .wf-step{padding:12px 14px}
-
-    /* 行业卡内边距/字号微收（栅格列数沿用 site.css 的 480 断点：2 列） */
-    .indcard{padding:20px 14px}
-    .indcard .ico{width:44px;height:44px;font-size:18px;margin-bottom:12px}
-    .indcard .nm{font-size:14px}
 
     /* KPI 数据带保持 2 列；字号略收，避免大数字撑宽 */
     .kpicard{padding:22px 18px}
@@ -256,10 +192,9 @@
     .ph-zoom{padding:11px 15px;min-height:44px}
   }
 
-  /* —— 极窄屏（≤400，覆盖 390/360）：进一步压间距、KPI 可考虑单列防挤 —— */
+  /* —— 极窄屏（≤400，覆盖 390/360） —— */
   @media(max-width:400px){
-    .indcard .sc{font-size:11px}
-    .kb-row .kb-meta,.kb-row .kb-sync{font-size:10.5px}
+    .kpicard .v{font-size:clamp(22px,7vw,28px)}
   }
 </style>
 </head>
@@ -279,7 +214,7 @@
         <div class="ph-copy">
           <span class="eyebrow"><span class="dot"></span>产品 · 02</span>
           <h1>句子秒懂 ·<br/><span class="accent">让 AI 真的懂你的业务</span></h1>
-          <p class="ph-lede">通用大模型不懂你的业务。把产品文档、SOP、合规规则装进 Agent，<strong>AI 才能用企业自己的知识回答客户、按企业的流程办事</strong>。</p>
+          <p class="ph-lede">企业级 Agent 开发平台——<strong>流程引擎</strong>可视化编排对话逻辑与转人工策略，<strong>调优中心</strong>用真实会话数据持续优化效果，<strong>100+ 大模型</strong>按场景灵活切换。业务人员不写代码，就能让 AI 按企业的流程办事。</p>
           <div class="ph-cta">
             <button type="button" class="btn btn-blue btn-lg ar-host" onclick="openContact('句子秒懂·页头','预约演示')">
               预约演示
@@ -288,10 +223,10 @@
             <a href="#capabilities" class="btn btn-ghost btn-lg">看核心能力</a>
           </div>
           <div class="ph-pills">
-            <span><i></i>100+ 大模型支持</span>
-            <span><i></i>Canvas 可视化工作流</span>
-            <span><i></i>5 个高合规行业策略库</span>
-            <span><i></i>多年行业数据沉淀</span>
+            <span><i></i>流程引擎 · 可视化编排</span>
+            <span><i></i>调优中心 · 持续优化</span>
+            <span><i></i>100+ 大模型灵活切换</span>
+            <span><i></i>转人工策略内置</span>
           </div>
         </div>
         <div class="ph-art">
@@ -311,182 +246,164 @@
     </div>
   </header>
 
-  <!-- ════════════ 产品截图陈列 ════════════ -->
-  <section class="sec pad" id="screens">
+  <!-- ════════════ 流程引擎 · 可视化编排对话逻辑 ════════════ -->
+  <section class="sec pad" id="flow-engine">
     <div class="wrap">
       <div class="sec-top rv">
         <div>
-          <span class="sec-eyebrow">真实界面</span>
-          <h2>可视化拼装 Agent，<span class="hl"><span>不用写代码</span></span>。</h2>
+          <span class="sec-eyebrow">流程引擎</span>
+          <h2>可视化编排对话逻辑，<span class="hl"><span>含转人工策略</span></span>。</h2>
         </div>
-        <p class="sub">Canvas 可视化编辑器——拖拽节点连成 Agent 工作流。条件、循环、并行、转人工，每一步看得见、改得动。</p>
+        <p class="sub">Canvas 拖拽节点组成工作流：意图识别、知识库检索、条件分支、转人工——每一步看得见、改得动，运营不写代码即可配置。</p>
       </div>
       <div class="shotwrap">
         <div class="shotcard rv">
-          <div class="win"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">句子秒懂 · Canvas 工作流编辑器</span></div>
-          <img src="../assets/product-shots/miaodong-canvas.png" alt="句子秒懂 Canvas 可视化工作流编辑器界面" loading="lazy" decoding="async" />
-          <div class="cap">Canvas 拖拽节点连成 Agent——条件、循环、并行、转人工，每一步看得见、改得动，运营不写代码也能配。</div>
+          <div class="win"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">流程引擎 · 工作流全景</span></div>
+          <img src="../assets/product-shots/miaodong/flow-engine-1.png" alt="句子秒懂流程引擎 - 工作流全景视图" loading="lazy" decoding="async" />
+          <div class="cap">Canvas 可视化编辑器全景——从用户进入到回复输出，完整的对话处理链路一目了然。</div>
         </div>
         <div class="shotcard rv rv-d1">
-          <div class="win"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">句子秒懂 · 模型设置</span></div>
-          <img src="../assets/product-shots/miaodong-models.png" alt="句子秒懂 模型设置界面" loading="lazy" decoding="async" />
-          <div class="cap">DeepSeek、智谱、通义、文心、GPT 任选，按场景和成本随时切换，不绑死任何一家。</div>
+          <div class="win"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">流程引擎 · 节点配置</span></div>
+          <img src="../assets/product-shots/miaodong/flow-engine-2.png" alt="句子秒懂流程引擎 - 节点配置详情" loading="lazy" decoding="async" />
+          <div class="cap">每个节点可独立配置：选择模型、设定提示词、挂载知识库、配置条件分支。</div>
+        </div>
+        <div class="shotcard rv">
+          <div class="win"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">流程引擎 · 条件分支</span></div>
+          <img src="../assets/product-shots/miaodong/flow-engine-3.png" alt="句子秒懂流程引擎 - 条件分支逻辑" loading="lazy" decoding="async" />
+          <div class="cap">条件节点支持多分支判断——按意图、关键词、用户属性等维度灵活路由。</div>
+        </div>
+        <div class="shotcard rv rv-d1">
+          <div class="win"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">流程引擎 · 转人工策略</span></div>
+          <img src="../assets/product-shots/miaodong/flow-engine-transfer.png" alt="句子秒懂流程引擎 - 转人工策略配置" loading="lazy" decoding="async" />
+          <div class="cap">内置转人工节点——超出 AI 能力范围时自动流转至人工坐席，支持按技能组、排队策略分配。</div>
+        </div>
+        <div class="shotcard rv">
+          <div class="win"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">流程引擎 · 多 Agent 协作</span></div>
+          <img src="../assets/product-shots/miaodong/flow-engine-4.png" alt="句子秒懂流程引擎 - 多Agent协作" loading="lazy" decoding="async" />
+          <div class="cap">复杂业务拆成多个 Agent 各管一段，主管 Agent 统一调度，比单流程更易维护。</div>
+        </div>
+        <div class="shotcard rv rv-d1">
+          <div class="win"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">流程引擎 · 调试与测试</span></div>
+          <img src="../assets/product-shots/miaodong/flow-engine-5.png" alt="句子秒懂流程引擎 - 调试测试界面" loading="lazy" decoding="async" />
+          <div class="cap">内置调试面板——输入测试问题即可实时查看每个节点的执行结果，快速定位问题。</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ════════════ 核心能力 · 6 块 ════════════ -->
+  <!-- ════════════ 核心能力 · 3 大核心 ════════════ -->
   <section class="sec pad" id="capabilities">
     <div class="wrap">
       <div class="sec-top rv">
         <div>
           <span class="sec-eyebrow">核心能力</span>
-          <h2>一个企业级 Agent 开发平台，<span class="hl warm"><span>该有的都有</span></span>。</h2>
+          <h2>三大核心能力，<span class="hl warm"><span>让 AI 真正落地</span></span>。</h2>
         </div>
-        <p class="sub">句子秒懂是 AI 员工的「大脑」。可视化搭 Agent、接知识、调工具、选模型、发渠道——业务人员不写代码，就能把企业的流程和知识装进 Agent。</p>
+        <p class="sub">流程引擎编排对话逻辑，调优中心用数据持续优化，100+ 大模型按需切换——三者配合，AI 才能从"能用"到"好用"。</p>
       </div>
       <div class="arch rv" style="padding:clamp(18px,2.4vw,28px)">
         <div class="tier-cards three">
-          <div class="pcard c-orange rv">
-            <span class="ptag"><i class="fa-solid fa-diagram-project" style="margin-right:7px"></i>01 · 可视化编排</span>
-            <h3>可视化编排</h3>
-            <p>Canvas 拖拽节点连成 Agent——条件、循环、并行、转人工，每一步看得见、改得动，运营不写代码也能配。</p>
+          <div class="pcard c-blue rv">
+            <span class="ptag"><i class="fa-solid fa-diagram-project" style="margin-right:7px"></i>01 · 流程引擎</span>
+            <h3>流程引擎</h3>
+            <p>Canvas 可视化编排对话全流程：意图识别、知识库检索、条件分支、转人工——运营拖拽即可配置，无需开发介入。支持多 Agent 协作与灰度发布。</p>
           </div>
-          <div class="pcard c-blue rv rv-d1">
-            <span class="ptag"><i class="fa-solid fa-sitemap" style="margin-right:7px"></i>02 · 多 Agent 协作</span>
-            <h3>多 Agent 协作</h3>
-            <p>复杂业务拆成各管一段的 Agent，主管 Agent 统一调度，比单个几百节点的大流程更好维护、效果更好。</p>
+          <div class="pcard c-orange rv rv-d1">
+            <span class="ptag"><i class="fa-solid fa-chart-line" style="margin-right:7px"></i>02 · 调优中心</span>
+            <h3>调优中心</h3>
+            <p>基于真实会话的 BadCase 标注、质量评分、效果对比——用数据驱动 Agent 持续优化，而非凭感觉调 prompt。每次调整都能量化验证。</p>
           </div>
           <div class="pcard c-green rv rv-d2">
-            <span class="ptag"><i class="fa-solid fa-book-open" style="margin-right:7px"></i>03 · 知识库</span>
-            <h3>知识库</h3>
-            <p>产品文档、FAQ、网页、表格、API 一次导入，自动建索引，回答带出处、不跑偏。</p>
-          </div>
-          <div class="pcard c-purple rv">
-            <span class="ptag"><i class="fa-solid fa-plug" style="margin-right:7px"></i>04 · 插件与工具</span>
-            <h3>插件与工具</h3>
-            <p>接 CRM、工单、订单、自定义 API，Agent 不止于回复，还能查库存、发券、改订单。</p>
-          </div>
-          <div class="pcard c-teal rv rv-d1">
-            <span class="ptag"><i class="fa-solid fa-layer-group" style="margin-right:7px"></i>05 · 100+ 大模型</span>
+            <span class="ptag"><i class="fa-solid fa-layer-group" style="margin-right:7px"></i>03 · 100+ 大模型</span>
             <h3>100+ 大模型</h3>
-            <p>DeepSeek、智谱、通义、文心、GPT 任选，按场景和成本随时切换，不绑死任何一家。</p>
-          </div>
-          <div class="pcard c-orange rv rv-d2">
-            <span class="ptag"><i class="fa-solid fa-share-nodes" style="margin-right:7px"></i>06 · 一键发布多渠道</span>
-            <h3>一键发布多渠道</h3>
-            <p>配好的 Agent 直接发布到 11 个 IM 通道、网页和 API，复用到销售、客服、招聘等多个场景。</p>
+            <p>DeepSeek、智谱、通义、文心、GPT 等 100+ 模型任选。按场景选模型、按成本切换，不绑定任何一家，始终用最适合业务的那个。</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ════════════ 知识库 · 大模型真读过你的业务文档 ════════════ -->
-  <section class="sec pad" id="knowledge">
+  <!-- ════════════ 调优中心 · 数据驱动持续优化 ════════════ -->
+  <section class="sec pad" id="tuning-center">
     <div class="wrap">
       <div class="sec-top rv">
         <div>
-          <span class="sec-eyebrow">知识库</span>
-          <h2>大模型不是在猜——<span class="hl"><span>它是真读过你的业务文档</span></span>。</h2>
+          <span class="sec-eyebrow">调优中心</span>
+          <h2>用真实会话数据<span class="hl"><span>持续优化 Agent 效果</span></span>。</h2>
         </div>
-        <p class="sub">通用大模型的回答来自公开语料。它不知道你的产品参数，不懂你的合规边界，不知道你的促销规则。</p>
+        <p class="sub">不再凭感觉调 prompt——调优中心从真实对话中标注 BadCase、量化质量评分、对比优化前后效果，让每次迭代都有据可依。</p>
       </div>
-      <div class="arch rv" style="padding:clamp(20px,2.6vw,32px)">
-        <div class="ind-why" style="margin-top:0;background:#fff;grid-template-columns:1.12fr .88fr;align-items:start">
-          <div>
-            <h4 style="max-width:none;margin-bottom:16px">句子秒懂的知识库让 AI 基于企业自己的文档回答客户</h4>
-            <p style="font-size:14.5px;line-height:1.75;color:var(--ink-2);margin-bottom:18px">句子秒懂的知识库让 AI 基于<strong style="color:var(--ink);font-weight:700">企业自己的文档</strong>回答客户：FAQ、产品手册、网页内容、内部规则、合规话术，一次导入，长期可检索。</p>
-            <ul class="ap-feats" style="margin-top:0">
-              <li>支持文档、网页、表格、API 等多种格式导入</li>
-              <li>AI 自动分块 + 向量化，毫秒级检索匹配</li>
-              <li>知识覆盖度分析：哪些问题客户问了但 AI 没答好</li>
-              <li>版本管理：文档更新后 AI 同步更新</li>
-              <li>多知识库隔离：不同业务线、不同行业各管各的</li>
-            </ul>
-          </div>
-          <div>
-            <div class="demo-panel">
-              <div class="dp-hd"><i class="dot"></i>知识库 · 已导入 · 247 篇</div>
-              <div class="dp-body">
-                <div class="kb-rows">
-                  <div class="kb-row k-blue"><span class="kb-ic"><i class="fa-solid fa-file-lines"></i></span><span class="kb-nm">产品规格手册 v3.2</span><span class="kb-meta">128 chunks</span></div>
-                  <div class="kb-row k-orange"><span class="kb-ic"><i class="fa-solid fa-circle-question"></i></span><span class="kb-nm">FAQ · 售前售后</span><span class="kb-meta">312 chunks</span></div>
-                  <div class="kb-row k-green"><span class="kb-ic"><i class="fa-solid fa-lock"></i></span><span class="kb-nm">合规话术库</span><span class="kb-meta">86 chunks</span></div>
-                  <div class="kb-row k-purple"><span class="kb-ic"><i class="fa-solid fa-tags"></i></span><span class="kb-nm">2026 Q1 促销规则</span><span class="kb-meta">42 chunks</span></div>
-                  <div class="kb-row k-mute"><span class="kb-ic"><i class="fa-solid fa-globe"></i></span><span class="kb-nm">官网内容（自动同步）</span><span class="kb-sync">同步中</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div class="shotwrap">
+        <div class="shotcard rv">
+          <div class="win"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">调优中心 · BadCase 标注</span></div>
+          <img src="../assets/product-shots/miaodong/tuning-center-1.png" alt="句子秒懂调优中心 - BadCase标注界面" loading="lazy" decoding="async" />
+          <div class="cap">从真实会话中标注 BadCase，明确 AI 哪里答错了、为什么错——问题定义清楚，优化才有方向。</div>
+        </div>
+        <div class="shotcard rv rv-d1">
+          <div class="win"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">调优中心 · 质量评分</span></div>
+          <img src="../assets/product-shots/miaodong/tuning-center-2.png" alt="句子秒懂调优中心 - 质量评分面板" loading="lazy" decoding="async" />
+          <div class="cap">多维度质量评分体系——准确率、合规性、完整度等指标一目了然，量化 Agent 的真实表现。</div>
+        </div>
+        <div class="shotcard rv">
+          <div class="win"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">调优中心 · 效果对比</span></div>
+          <img src="../assets/product-shots/miaodong/tuning-center-3.png" alt="句子秒懂调优中心 - 优化效果对比" loading="lazy" decoding="async" />
+          <div class="cap">优化前后效果对比——调整 prompt、切换模型、补充知识后，质量分数的变化清晰可见。</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ════════════ 智能体 + 工作流 · 可视化拼装 Agent ════════════ -->
-  <section class="sec pad" id="agent">
+  <!-- ════════════ 模型选择 · 100+ 大模型按需切换 ════════════ -->
+  <section class="sec pad" id="model-selection">
     <div class="wrap">
       <div class="sec-top rv">
         <div>
-          <span class="sec-eyebrow">智能体 + 工作流</span>
-          <h2>运营人员即可配置 Agent 行为，<span class="hl warm"><span>无需等待开发排期</span></span>。</h2>
+          <span class="sec-eyebrow">模型选择</span>
+          <h2>100+ 大模型，<span class="hl warm"><span>按场景和成本灵活切换</span></span>。</h2>
         </div>
-        <p class="sub">Canvas 可视化编辑器——拖拽节点连成 Agent 工作流。条件判断、知识库查询、模型调用、工具调用、转人工——每一步都看得见、改得动。</p>
+        <p class="sub">DeepSeek、智谱、通义、文心、GPT 等主流模型全部接入。不同节点可选不同模型——简单问答用轻量模型控成本，复杂推理用旗舰模型保效果。</p>
       </div>
-      <div class="arch rv" style="padding:clamp(20px,2.6vw,32px)">
-        <div class="ind-why" style="margin-top:0;background:#fff">
-          <div>
-            <h4 style="max-width:none;margin-bottom:16px">运营人员即可配置 Agent 行为，无需等待开发排期</h4>
-            <p style="font-size:14.5px;line-height:1.75;color:var(--ink-2);margin-bottom:18px">运营人员即可配置 Agent 行为，无需等待开发排期。Agent 表现不符合预期时，运营在 Canvas 上即可调整。</p>
-            <ul class="ap-feats" style="margin-top:0">
-              <li>三种智能体：对话型 / 任务型 / 多 Agent 协作</li>
-              <li>100+ 种主流大模型可选：DeepSeek、智谱、文心、通义、GPT 等</li>
-              <li>版本管理 + 灰度发布：新版本可控上线</li>
-              <li>工作流模板库：每个行业都有起跑模板</li>
-            </ul>
-          </div>
-          <div>
-            <div class="demo-panel">
-              <div class="dp-hd"><i class="dot" style="background:var(--orange-deep)"></i>智能体 · 售前咨询 v2.1</div>
-              <div class="dp-body">
-                <div class="wf-steps">
-                  <div class="wf-step w-orange"><i class="wf-ic"><i class="fa-solid fa-comment"></i></i>用户提问</div>
-                  <div class="wf-arrow"><i class="fa-solid fa-arrow-down"></i></div>
-                  <div class="wf-step w-blue"><i class="wf-ic"><i class="fa-solid fa-magnifying-glass"></i></i>知识库检索</div>
-                  <div class="wf-arrow"><i class="fa-solid fa-arrow-down"></i>命中？</div>
-                  <div class="wf-branch">
-                    <div class="wf-step w-green"><i class="wf-ic"><i class="fa-solid fa-check"></i></i>命中 → 模型生成</div>
-                    <div class="wf-step w-purple"><i class="wf-ic"><i class="fa-solid fa-user"></i></i>未命中 → 转人工</div>
-                  </div>
-                  <div class="wf-arrow"><i class="fa-solid fa-arrow-down"></i></div>
-                  <div class="wf-step w-teal"><i class="wf-ic"><i class="fa-solid fa-check-double"></i></i>输出回复 + 打标</div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div class="shotwrap" style="grid-template-columns:1fr">
+        <div class="shotcard rv">
+          <div class="win"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">句子秒懂 · 模型选择面板</span></div>
+          <img src="../assets/product-shots/miaodong/model-selection.png" alt="句子秒懂模型选择 - 100+大模型列表" loading="lazy" decoding="async" />
+          <div class="cap">一个工作流内不同节点可选用不同模型——按场景匹配最优性价比，随时切换，不绑定任何一家供应商。</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ════════════ 5 个高合规高垂直行业策略库 ════════════ -->
-  <section class="sec pad" id="industries">
+  <!-- ════════════ 客户案例 · 中国保险行业协会 ════════════ -->
+  <section class="sec pad" id="case-study">
     <div class="wrap">
       <div class="sec-top rv">
         <div>
-          <span class="sec-eyebrow">5 个高合规高垂直行业的策略库</span>
-          <h2>开通就带<span class="hl"><span>一套现成的行业打法</span></span>。</h2>
+          <span class="sec-eyebrow">客户案例</span>
+          <h2>中国保险行业协会：<span class="hl"><span>AI 调解员上岗</span></span>。</h2>
         </div>
-        <p class="sub">每个行业的话术、SOP、合规边界，我们都内置好了——多年沉下来的行业经验，你不用从零调，开通就能用。</p>
+        <p class="sub">中国保险行业协会使用句子秒懂搭建 AI 调解员，处理保险纠纷咨询。流程引擎编排调解逻辑，调优中心持续提升合规准确率。</p>
       </div>
-      <div class="indgrid rv">
-        <div class="indcard"><div class="ico"><i class="fa-solid fa-graduation-cap"></i></div><div class="nm">在线教育</div><div class="sc">话术库 · 报名漏斗 · 续费策略</div></div>
-        <div class="indcard"><div class="ico"><i class="fa-solid fa-bag-shopping"></i></div><div class="nm">消费品电商</div><div class="sc">导购话术 · 售后处理 · 私域召回</div></div>
-        <div class="indcard"><div class="ico"><i class="fa-solid fa-building-columns"></i></div><div class="nm">金融</div><div class="sc">合规话术 · 风控边界 · KYC 流程</div></div>
-        <div class="indcard"><div class="ico"><i class="fa-solid fa-scale-balanced"></i></div><div class="nm">政务 · 司法</div><div class="sc">调解话术 · 普法应答 · 公文规范</div></div>
-        <div class="indcard"><div class="ico"><i class="fa-solid fa-globe"></i></div><div class="nm">泛互联网</div><div class="sc">客服 SOP · 用户分层 · 留存策略</div></div>
+      <div class="shotwrap">
+        <div class="shotcard rv">
+          <div class="win"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">案例 · 保险协会 · 调解场景</span></div>
+          <img src="../assets/product-shots/miaodong/case-insurance-1.png" alt="中国保险行业协会案例 - AI调解场景" loading="lazy" decoding="async" />
+          <div class="cap">AI 调解员基于保险法规和协会规则，引导用户完成纠纷调解全流程。</div>
+        </div>
+        <div class="shotcard rv rv-d1">
+          <div class="win"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">案例 · 保险协会 · 流程配置</span></div>
+          <img src="../assets/product-shots/miaodong/case-insurance-2.png" alt="中国保险行业协会案例 - 流程引擎配置" loading="lazy" decoding="async" />
+          <div class="cap">用流程引擎编排调解逻辑——身份核验、诉求分类、法规检索、方案生成、转人工升级。</div>
+        </div>
+        <div class="shotcard rv">
+          <div class="win"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">案例 · 保险协会 · 效果数据</span></div>
+          <img src="../assets/product-shots/miaodong/case-insurance-3.png" alt="中国保险行业协会案例 - 运营效果数据" loading="lazy" decoding="async" />
+          <div class="cap">调优中心跟踪调解质量——合规率、用户满意度、转人工比例等指标持续改善。</div>
+        </div>
+        <div class="shotcard rv rv-d1">
+          <div class="win"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">案例 · 保险协会 · 知识管理</span></div>
+          <img src="../assets/product-shots/miaodong/case-insurance-4.png" alt="中国保险行业协会案例 - 法规知识库" loading="lazy" decoding="async" />
+          <div class="cap">保险法规、调解案例、协会文件统一纳入知识库，AI 回答有据可查、合规可控。</div>
+        </div>
       </div>
     </div>
   </section>
@@ -504,8 +421,8 @@
       <div class="kpiband rv">
         <div class="kpicard"><div class="v">100+</div><div class="l">支持的大模型种类</div></div>
         <div class="kpicard"><div class="v">89%</div><div class="l">对话自动完成率</div></div>
-        <div class="kpicard"><div class="v">5 个</div><div class="l">高合规行业策略库</div></div>
-        <div class="kpicard"><div class="v">多年</div><div class="l">行业数据沉淀</div></div>
+        <div class="kpicard"><div class="v">↑35%</div><div class="l">调优后准确率提升</div></div>
+        <div class="kpicard"><div class="v">90 天</div><div class="l">首个 AI 员工上岗</div></div>
       </div>
     </div>
   </section>
@@ -526,7 +443,7 @@
       <div class="cta-stats">
         <div class="cta-stat rv" style="--ac:#4338CA"><div class="csv">100+</div><div class="csl">支持的大模型种类</div></div>
         <div class="cta-stat rv rv-d1" style="--ac:#14B8A6"><div class="csv">89%</div><div class="csl">对话自动完成率</div></div>
-        <div class="cta-stat rv rv-d2" style="--ac:#6366F1"><div class="csv">5 个</div><div class="csl">高合规行业策略库</div></div>
+        <div class="cta-stat rv rv-d2" style="--ac:#6366F1"><div class="csv">↑35%</div><div class="csl">调优后准确率提升</div></div>
       </div>
     </div>
   </section>
