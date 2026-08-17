@@ -198,7 +198,7 @@
   function addLead(label) {
     var b = el('a', 'jzab-cta', '<i class="fa-solid fa-headset"></i> ' + esc(label || '预约真人演示'));
     b.href = 'javascript:void 0';
-    b.onclick = function () { close(); if (window.openContact) window.openContact('对话层'); };
+    b.onclick = function () { close(); if (window.openContact) window.openContact('对话层', '预约演示'); };
     body.appendChild(b); scroll();
   }
 
@@ -206,6 +206,14 @@
 
   function sendText(v) {
     v = (v || '').trim(); if (!v || busy) return;
+    if (window.JZAnalytics) {
+      var c = pageCtx();
+      window.JZAnalytics.trackQuestion(v, {
+        question_surface: '全站问句子',
+        question_source: c ? (c.title || c.entity) : '全站',
+        question_session_id: SID
+      });
+    }
     clearChips(); addMe(v);
     var r = matchRoute(v);
     if (r) { // 命中意图：秒回 + 实体卡（对话即导航）
@@ -255,12 +263,18 @@
     if (nr && !nr.querySelector('.jzab-trigger')) {
       var isMac = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
       var b = el('button', 'jzab-trigger', '<i class="fa-solid fa-wand-magic-sparkles"></i> 问句子 <span class="jzab-kbd">' + (isMac ? '⌘K' : 'Ctrl K') + '</span>');
+      b.setAttribute('data-track-name', '问句子');
+      b.setAttribute('data-track-source', '导航·问句子');
+      b.setAttribute('data-track-area', '顶部导航栏');
       b.type = 'button'; b.setAttribute('aria-haspopup', 'dialog'); b.onclick = open;
       nr.insertBefore(b, nr.firstChild);
     }
     // 常驻浮动入口（所有页兜底）
     if (!document.querySelector('.jzab-fab')) {
       var f = el('button', 'jzab-fab', '<i class="fa-solid fa-wand-magic-sparkles"></i><span>问句子</span>');
+      f.setAttribute('data-track-name', '问句子');
+      f.setAttribute('data-track-source', '悬浮·问句子');
+      f.setAttribute('data-track-area', '右下角悬浮');
       f.type = 'button'; f.setAttribute('aria-haspopup', 'dialog'); f.setAttribute('aria-label', '问句子 · 打开 AI 对话'); f.onclick = open;
       document.body.appendChild(f);
     }

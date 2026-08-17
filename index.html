@@ -1447,7 +1447,7 @@ html{overflow-x:clip}
   </div>
   <div class="nav-right">
     <a class="nav-cta" style="cursor:pointer" onclick="openContact('导航·联系我们')">联系我们 →</a>
-    <a href="https://az-bg.juzibot.com/auth/register" class="nav-login">登录 / 注册</a>
+    <a href="https://az-bg.juzibot.com/auth/register" class="nav-login" data-track-name="登录 / 注册" data-track-source="导航·登录注册" data-track-area="顶部导航栏">登录 / 注册</a>
   </div>
   <button class="nav-burger" aria-label="菜单" onclick="this.closest('.nav').classList.toggle('menu-open')">
     <svg class="bg-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -1471,7 +1471,7 @@ html{overflow-x:clip}
           预约演示
           <span class="ar"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9h11M10 4l5 5-5 5"/></svg><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9h11M10 4l5 5-5 5"/></svg></span>
         </button>
-        <a href="#products" class="btn btn-ghost btn-lg">看七大产品基建</a>
+        <a href="#products" class="btn btn-ghost btn-lg" data-track-name="看七大产品基建" data-track-source="首页·Hero" data-track-area="首屏">看七大产品基建</a>
       </div>
       <div class="hero-kpis">
         <div class="hero-kpi"><div class="v cu" data-count="1000" data-suffix="+">1000+</div><div class="l">大型企业客户</div></div>
@@ -2176,7 +2176,7 @@ html{overflow-x:clip}
       <h2>把第一个 <span class="acc">AI 员工</span><br/>装进你的业务流程。</h2>
       <p class="sub">从一个 AI 角色起步，慢慢扩到多个岗位。最快 1 天，第一个 AI 员工在你的业务里上岗。</p>
       <div class="cta-actions">
-        <button type="button" class="btn btn-blue btn-lg ar-host" onclick="openContact('首页·底部CTA')">
+        <button type="button" class="btn btn-blue btn-lg ar-host" onclick="openContact('首页·底部CTA','预约演示')">
           预约演示
           <span class="ar"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9h11M10 4l5 5-5 5"/></svg><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9h11M10 4l5 5-5 5"/></svg></span>
         </button>
@@ -2278,7 +2278,7 @@ html{overflow-x:clip}
       </div>
       <div class="m-cta-row">
         <button class="btn-primary" onclick="closeModal('introModal');openContact('首页·开屏弹窗','预约 30 分钟演示')">预约演示 → 30 分钟</button>
-        <button class="btn-secondary" onclick="closeModal('introModal')">先看看再说</button>
+        <button class="btn-secondary" data-track-name="先看看再说" data-track-source="首页·开屏弹窗" data-track-area="开屏弹窗" onclick="closeModal('introModal')">先看看再说</button>
       </div>
       <p class="m-note">不用注册 · 看真实客户场景 · 工作日当天回复</p>
     </div>
@@ -3341,6 +3341,7 @@ if(!sessionStorage.getItem('intro_shown')){
       img.className='chat-qr';img.src='assets/brand/qr-qiwei.png';
       img.alt='企业微信二维码';img.width=172;img.height=172;img.loading='lazy';
       b.appendChild(img);scrollDown();
+      if(window.JZAnalytics)window.JZAnalytics.trackQrExposure('首页·Hero对话',{qr_surface:'首页首屏对话二维码'});
       if(onDone)onDone();
     },reduce?80:760);
   }
@@ -3416,6 +3417,7 @@ if(!sessionStorage.getItem('intro_shown')){
   }
   function handleText(text){
     text=(text||'').trim();if(!text)return;
+    if(window.JZAnalytics)window.JZAnalytics.trackQuestion(text,{question_surface:'首页顶部 AI 对话框',question_source:'首页·Hero对话',question_session_id:RB_SESSION});
     cancelDemo();removeChips();addUser(text);
     askRealBot(text);
   }
@@ -3425,6 +3427,7 @@ if(!sessionStorage.getItem('intro_shown')){
     var b=e.target.closest('.chat-chips button');if(!b)return;
     if(b.classList.contains('chip-cta'))return;          /* 自带监听 */
     var id=b.dataset.topic;if(!id)return;
+    if(window.JZAnalytics)window.JZAnalytics.trackQuestion(TOPICS[id].q,{question_surface:'首页顶部 AI 对话框',question_source:'首页·Hero对话快捷问题',question_session_id:RB_SESSION,matched_topic:id});
     cancelDemo();removeChips();addUser(TOPICS[id].q);botAnswer(id);
   });
   /* 用户一旦碰输入框就停止自动演示 */
@@ -3553,6 +3556,7 @@ if(!sessionStorage.getItem('intro_shown')){
 })();
 </script>
 <!-- 全站对话层（AI-native 大改核心） -->
+<script src="assets/analytics.js" defer></script>
 <script>window.SITE_REL='';window.PAGE_CTX=null;</script>
 <script src="assets/askbar.js" defer></script>
 </body>

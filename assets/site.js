@@ -50,7 +50,7 @@
     '  </div>' +
     '  <div class="nav-right">' +
     '    <a class="nav-cta" style="cursor:pointer" onclick="openContact(\'导航·联系我们\')">联系我们 →</a>' +
-    '    <a href="https://az-bg.juzibot.com/auth/register" class="nav-login">登录 / 注册</a>' +
+    '    <a href="https://az-bg.juzibot.com/auth/register" class="nav-login" data-track-name="登录 / 注册" data-track-source="导航·登录注册" data-track-area="顶部导航栏">登录 / 注册</a>' +
     '  </div>' +
     '  <button class="nav-burger" aria-label="菜单" onclick="this.closest(\'.nav\').classList.toggle(\'menu-open\')">' +
     '    <svg class="bg-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>' +
@@ -122,6 +122,10 @@
     var f = document.getElementById('site-footer'); if (f) f.outerHTML = FOOTER;
     document.body.insertAdjacentHTML('beforeend', CONTACT);
     wire();
+    // DataFinder 埋点层：先于 askbar 加载，保证对话问题和 CTA 都能被记录。
+    if (!window.JZAnalytics && !document.querySelector('script[data-jz-analytics]')) {
+      var a = document.createElement('script'); a.src = REL + 'assets/analytics.js'; a.defer = true; a.setAttribute('data-jz-analytics', '1'); document.body.appendChild(a);
+    }
     // 全站对话层：加载 askbar.js（AI-native 大改核心）
     if (!window.__jzab && !document.querySelector('script[data-jzab]')) {
       var s = document.createElement('script'); s.src = REL + 'assets/askbar.js'; s.defer = true; s.setAttribute('data-jzab', '1'); document.body.appendChild(s);
